@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لاتری آمریکا - محمد پارسا</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --primary-dark: #1e40af;
+            --accent: #e11d48;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gold: #f59e0b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --discount: #8b5cf6;
+            --settings-bg: #ffffff;
+            --settings-text: #1e293b;
+            --settings-border: #e2e8f0;
+            --settings-hover: #f1f5f9;
+            --modal-bg: rgba(0, 0, 0, 0.5);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='2' fill='white' opacity='0.1'/%3E%3C/svg%3E");
+            background-size: 50px;
+            opacity: 0.3;
+        }
+        .title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        .badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+            z-index: 2;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .content {
+            padding: 40px;
+        }
+        .countdown-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .countdown-title {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        .countdown-title::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .time-unit {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 25px 20px;
+            min-width: 100px;
+            box-shadow: 0 8px 20px rgba(26, 86, 219, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        .time-unit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(26, 86, 219, 0.4);
+        }
+        .time-unit::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+        }
+        .time-value {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Arial', sans-serif;
+        }
+        .time-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--primary);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .stat-card.success {
+            border-top-color: var(--success);
+        }
+        .stat-card.warning {
+            border-top-color: var(--warning);
+        }
+        .stat-card.danger {
+            border-top-color: var(--danger);
+        }
+        .stat-value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .success .stat-value {
+            color: var(--success);
+        }
+        .warning .stat-value {
+            color: var(--warning);
+        }
+        .danger .stat-value {
+            color: var(--danger);
+        }
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--dark);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .stat-desc {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        .consultant-section {
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+        }
+        .consultant-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+        .consultant-title {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            background: white;
+            padding: 0 20px;
+            z-index: 2;
+        }
+        .consultant-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 3px dashed var(--primary);
+            max-width: 550px;
+            position: relative;
+            overflow: hidden;
+        }
+        .consultant-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(100%); }
+            100% { transform: translateX(100%) translateY(-100%); }
+        }
+        .consultant-name {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .consultant-bio {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: white;
+            border-radius: 15px;
+            padding: 20px 15px;
+            min-width: 130px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .stat:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .stat-value-small {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+        .stat-label-small {
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        .contact-section {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+        .contact-title {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+        .contact-title::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 40px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            min-width: 250px;
+            text-align: center;
+            justify-content: center;
+        }
+        .contact-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+            z-index: 1;
+        }
+        .contact-button span {
+            position: relative;
+            z-index: 2;
+        }
+        .contact-button i {
+            position: relative;
+            z-index: 2;
+            font-size: 2rem;
+        }
+        .contact-button:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .contact-button:active {
+            transform: translateY(0);
+        }
+        .telegram {
+            background: linear-gradient(135deg, #27A7E7 0%, #1C93D3 100%);
+            color: white;
+        }
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+            color: white;
+        }
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .copyright {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 500;
+        }
+        .ribbon {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            transform: rotate(45deg);
+            background: var(--accent);
+            color: white;
+            padding: 12px 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            z-index: 3;
+            letter-spacing: 1px;
+        }
+        .date-display {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 12px 20px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+        .time-value {
+            transition: all 0.5s ease;
+        }
+        .time-value.change {
+            animation: flip 0.5s ease;
+        }
+        @keyframes flip {
+            0% { transform: rotateX(0deg); }
+            50% { transform: rotateX(90deg); }
+            100% { transform: rotateX(0deg); }
+        }
+        .reset-button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+        }
+        .reset-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(225, 29, 72, 0.4);
+        }
+        .discount-section {
+            background: linear-gradient(135deg, var(--discount) 0%, #7c3aed 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+        .discount-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'%3E%3Ccircle cx='50' cy='50' r='3' fill='white' opacity='0.1'/%3E%3C/svg%3E");
+            background-size: 40px;
+            opacity: 0.5;
+        }
+        .discount-title {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .discount-code {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--discount);
+            font-size: 2.2rem;
+            font-weight: 900;
+            padding: 15px 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            display: inline-block;
+            letter-spacing: 3px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+            border: 2px dashed var(--discount);
+        }
+        .discount-desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .copy-button {
+            background: white;
+            color: var(--discount);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .copy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .copied-message {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+        }
+        .copied-message.show {
+            opacity: 1;
+        }
+        .hashtag-section {
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .hashtag {
+            background: rgba(37, 99, 235, 0.2);
+            color: var(--primary-dark);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .hashtag:hover {
+            transform: scale(1.05);
+            background: rgba(37, 99, 235, 0.3);
+        }
+        .settings-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(26, 86, 219, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            font-size: 1.8rem;
+        }
+        .settings-button:hover {
+            transform: translateY(-5px) rotate(90deg);
+            box-shadow: 0 10px 25px rgba(26, 86, 219, 0.5);
+        }
+        .settings-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--modal-bg);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+        .settings-content {
+            background: var(--settings-bg);
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .settings-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .close-settings {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .close-settings:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+        .settings-section {
+            padding: 25px;
+            border-bottom: 1px solid var(--settings-border);
+        }
+        .settings-section:last-child {
+            border-bottom: none;
+        }
+        .settings-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--settings-text);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: var(--dark);
+            background: rgba(37, 99, 235, 0.05);
+        }
+        .social-link:hover {
+            transform: translateX(-5px);
+            background: rgba(37, 99, 235, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .social-link i {
+            font-size: 1.3rem;
+            width: 25px;
+            text-align: center;
+        }
+        .telegram-link {
+            color: #27A7E7;
+        }
+        .whatsapp-link {
+            color: #25D366;
+        }
+        .instagram-link {
+            color: #e1306c;
+        }
+        .facebook-link {
+            color: #1877f2;
+        }
+        .tiktok-link {
+            color: #000000;
+        }
+        .theme-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .theme-option {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .theme-option:hover {
+            transform: scale(1.05);
+        }
+        .theme-option.selected {
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .theme-light {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #1e293b;
+        }
+        .theme-dark {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e2e8f0;
+        }
+        .wallpaper-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .wallpaper-option {
+            height: 80px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            position: relative;
+        }
+        .wallpaper-option:hover {
+            transform: scale(1.05);
+        }
+        .wallpaper-option.selected {
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .wallpaper-option.selected::after {
+            content: "✓";
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: var(--primary);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .font-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .font-option {
+            padding: 10px 15px;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .font-option:hover {
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateX(-5px);
+        }
+        .font-option.selected {
+            background: var(--primary);
+            color: white;
+        }
+        .version-info {
+            text-align: center;
+            padding: 15px;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        /* Share Section */
+        .share-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 50px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        .share-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(26, 86, 219, 0.1), transparent);
+            z-index: 0;
+        }
+        .share-title {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+        .share-subtitle {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-weight: 500;
+            z-index: 1;
+            position: relative;
+        }
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            z-index: 1;
+            position: relative;
+        }
+        .share-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 25px;
+            border-radius: 15px;
+            background: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            min-width: 140px;
+            border: 2px solid transparent;
+        }
+        .share-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary);
+        }
+        .share-button i {
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        .share-button:hover i {
+            transform: scale(1.1);
+        }
+        .instagram-share {
+            color: #e1306c;
+        }
+        .facebook-share {
+            color: #1877f2;
+        }
+        .twitter-share {
+            color: #1da1f2;
+        }
+        .linkedin-share {
+            color: #0077b5;
+        }
+        .whatsapp-share {
+            color: #25D366;
+        }
+        .telegram-share {
+            color: #27A7E7;
+        }
+        .copy-link-button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(26, 86, 219, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .copy-link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(26, 86, 219, 0.4);
+        }
+        .copied-link-message {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+            font-weight: 600;
+        }
+        .copied-link-message.show {
+            opacity: 1;
+        }
+        
+        /* Documents Section */
+        .documents-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 50px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        .documents-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(26, 86, 219, 0.1), transparent);
+            z-index: 0;
+        }
+        .documents-title {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+        .documents-list {
+            text-align: right;
+            font-size: 1.2rem;
+            color: var(--dark);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        .documents-list h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .documents-list ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .documents-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .documents-separator {
+            border-top: 1px solid var(--settings-border);
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 15px;
+            }
+            .title {
+                font-size: 2.2rem;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            .content {
+                padding: 25px;
+            }
+            .countdown {
+                gap: 10px;
+            }
+            .time-unit {
+                min-width: 80px;
+                padding: 20px 15px;
+            }
+            .time-value {
+                font-size: 2.5rem;
+            }
+            .stats-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .consultant-name {
+                font-size: 2rem;
+            }
+            .consultant-bio {
+                font-size: 1.1rem;
+            }
+            .stats {
+                gap: 20px;
+            }
+            .contact-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .contact-button {
+                min-width: auto;
+                padding: 18px 30px;
+                font-size: 1.2rem;
+            }
+            .wallpaper-options {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .share-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .share-button {
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        /* Dark Theme */
+        body.dark-theme {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e2e8f0;
+        }
+        body.dark-theme .container {
+            background: linear-gradient(to bottom, #1e1e2d 0%, #1a1a2e 100%);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        body.dark-theme :root {
+            --settings-bg: #1a1a2e;
+            --settings-text: #e2e8f0;
+            --settings-border: #334155;
+            --settings-hover: #334155;
+            --modal-bg: rgba(0, 0, 0, 0.8);
+        }
+        body.dark-theme .stat-card,
+        body.dark-theme .consultant-card,
+        body.dark-theme .stat,
+        body.dark-theme .share-section {
+            background: #1e293b;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        body.dark-theme .discount-section {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        }
+        body.dark-theme .footer {
+            background: #0f172a;
+        }
+        body.dark-theme .share-button {
+            background: #334155;
+            color: #e2e8f0;
+        }
+        /* Extra Large Font */
+        body.extra-large-font {
+            font-size: 1.2rem;
+        }
+        body.extra-large-font .title {
+            font-size: 3.2rem;
+        }
+        body.extra-large-font .subtitle {
+            font-size: 1.6rem;
+        }
+        body.extra-large-font .countdown-title {
+            font-size: 1.8rem;
+        }
+        body.extra-large-font .time-value {
+            font-size: 3.5rem;
+        }
+        /* Thin Font */
+        body.thin-font {
+            font-weight: 300;
+        }
+        body.thin-font .title,
+        body.thin-font .countdown-title,
+        body.thin-font .consultant-title,
+        body.thin-font .contact-title,
+        body.thin-font .stat-label,
+        body.thin-font .stat-label-small {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ribbon">فرصت استثنایی</div>
+        <div class="header">
+            <div class="badge">فقط ۱۵ روز باقی مانده</div>
+            <h1 class="title">لاتری گرین کارت آمریکا</h1>
+            <p class="subtitle">شانس خود را برای زندگی در آمریکا امتحان کنید</p>
+            <div class="date-display">امروز: ۲۷ سنبله ۱۴۰۴</div>
+        </div>
+        <div class="content">
+            <div class="countdown-section">
+                <h2 class="countdown-title">زمان باقیمانده تا شروع ثبت نام</h2>
+                <div class="countdown">
+                    <div class="time-unit">
+                        <div class="time-value" id="days">15</div>
+                        <div class="time-label">روز</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-value" id="hours">23</div>
+                        <div class="time-label">ساعت</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-value" id="minutes">32</div>
+                        <div class="time-label">دقیقه</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-value" id="seconds">60</div>
+                        <div class="time-label">ثانیه</div>
+                    </div>
+                </div>
+                <button class="reset-button" onclick="resetTimer()">بازنشانی زمان (۱۵ روز ۲۳ ساعت ۳۲ دقیقه ۶۰ ثانیه)</button>
+            </div>
+            <!-- Hashtag Section -->
+            <div class="hashtag-section">
+                <h3 style="color: var(--primary-dark); font-size: 1.5rem; font-weight: 700; margin-bottom: 15px;">محمد پارسا - یک نام معتبر که عوض نمیشه!</h3>
+                <div class="hashtags">
+                    <div class="hashtag">#محمد_پارسا💎</div>
+                    <div class="hashtag">#یگ_نام_معتبر_است_عوض_نمیشه ✅</div>
+                    <div class="hashtag">#مشاوردهی_پاسپورت✅</div>
+                    <div class="hashtag">#تجربه_بالا_در_بخش_پاسپورت☑️</div>
+                </div>
+            </div>
+            <!-- Discount Section -->
+            <div class="discount-section">
+                <h3 class="discount-title">🎉 کد تخفیف ویژه 🎉</h3>
+                <div class="discount-code" id="discountCode">PARSA20</div>
+                <p class="discount-desc">از این کد تخفیف منحصر به فرد برای دریافت خدمات مشاوره استفاده کنید و ۲۰٪ تخفیف ویژه دریافت نمایید!</p>
+                <button class="copy-button" onclick="copyDiscountCode()">
+                    <i class="fas fa-copy"></i>
+                    <span>کپی کد تخفیف</span>
+                </button>
+                <div class="copied-message" id="copiedMessage">کد با موفقیت کپی شد! ✅</div>
+            </div>
+            <div class="stats-section">
+                <div class="stat-card success">
+                    <div class="stat-value">۳۲۱</div>
+                    <div class="stat-label">لیست گرفته شده ها</div>
+                    <div class="stat-desc">فامیلی و مجردی</div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-value">۵۴</div>
+                    <div class="stat-label">زیر پروسس</div>
+                    <div class="stat-desc">تنظیم نمودن عکس و مشخصات</div>
+                </div>
+                <div class="stat-card danger">
+                    <div class="stat-value">۲۱</div>
+                    <div class="stat-label">عکس ارسالی رد شده</div>
+                    <div class="stat-desc">معیار برای ثبت نام نبود</div>
+                </div>
+            </div>
+            <div class="consultant-section">
+                <h3 class="consultant-title">مشاور تخصصی لاتری آمریکا</h3>
+                <div class="consultant-card">
+                    <h4 class="consultant-name">محمد پارسا</h4>
+                    <p class="consultant-bio">۱۵ سال تجربه، دارای بیشترین پرونده موفق برنده لاتری، ۹۸٪ رضایت متقاضیان</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-value-small">۱۵+</div>
+                            <div class="stat-label-small">سال تجربه</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value-small">۹۸٪</div>
+                            <div class="stat-label-small">رضایت متقاضیان</div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <!-- Documents Section -->
+            <div class="documents-section">
+                <h3 class="documents-title">اسناد لازم برای ثبت نام</h3>
+                <div class="documents-list">
+                    <h4>➕ اسناد لازم برای انفرادی:</h4>
+                    <ul>
+                        <li>🟢 تذکره الکترونیکی</li>
+                        <li>☑️ ایمیل آدرس</li>
+                        <li>☑️ شماره مبایل</li>
+                        <li>☑️ اگر پاسپورت دارد خوب، ندارد لازم نیست.</li>
+                        <li>☑️ آدرس فعلی</li>
+                        <li>☑️ آدرس جاده یا ناحیه مربوطه</li>
+                    </ul>
+                    <div class="documents-separator">ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ</div>
+                    <h4>🔘 اسناد لازم برای فامیلی:</h4>
+                    <ul>
+                        <li>☑️ تذکره الکترونیکی همه فامیل</li>
+                        <li>☑️ ایمیل آدرس متقاضی یا سرپرست فامیل</li>
+                        <li>☑️ شماره مبایل سر پرست فامیل</li>
+                        <li>☑️ سویه تحصیلی متقاضی</li>
+                        <li>☑️ اگر پاسپورت دارد خوب ندارد لازم نیست</li>
+                        <li>☑️ آدرس فعلی</li>
+                        <li>☑️ آدرس جاده یا ناحیه مربوطه</li>
+                        <li>☑️ نوت فرزندان تان باید پایین تر از 21</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Share Section -->
+            <div class="share-section">
+                <h3 class="share-title">به اشتراک گذاری</h3>
+                <p class="share-subtitle">این فرصت استثنایی را با دوستان و آشنایان خود به اشتراک بگذارید و در استوری شبکه‌های اجتماعی قرار دهید</p>
+                <div class="share-buttons">
+                    <a href="#" class="share-button instagram-share" onclick="shareToInstagram(event)">
+                        <i class="fab fa-instagram"></i>
+                        <span>اینستاگرام</span>
+                    </a>
+                    <a href="#" class="share-button facebook-share" onclick="shareToFacebook(event)">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>فیسبوک</span>
+                    </a>
+                    <a href="#" class="share-button twitter-share" onclick="shareToTwitter(event)">
+                        <i class="fab fa-twitter"></i>
+                        <span>توییتر</span>
+                    </a>
+                    <a href="#" class="share-button whatsapp-share" onclick="shareToWhatsApp(event)">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>واتساپ</span>
+                    </a>
+                    <a href="#" class="share-button telegram-share" onclick="shareToTelegram(event)">
+                        <i class="fab fa-telegram-plane"></i>
+                        <span>تلگرام</span>
+                    </a>
+                    <a href="#" class="share-button linkedin-share" onclick="shareToLinkedIn(event)">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>لینکدین</span>
+                    </a>
+                </div>
+                <button class="copy-link-button" onclick="copyPageLink()">
+                    <i class="fas fa-link"></i>
+                    <span>کپی لینک صفحه</span>
+                </button>
+                <div class="copied-link-message" id="copiedLinkMessage">لینک با موفقیت کپی شد! ✅</div>
+            </div>
+            
+            <div class="contact-section">
+                <h3 class="contact-title">همین حالا برای مشاوره رایگان اقدام کنید</h3>
+                <div class="contact-buttons">
+                    <a href="https://t.me/Mohammadparsa001" class="contact-button telegram">
+                        <i class="fab fa-telegram"></i>
+                        <span>@Mohammadparsa001</span>
+                    </a>
+                    <a href="https://wa.me/93791979726" class="contact-button whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>0791979726</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="footer-text">کلیه حقوق این وب‌سایت توسط محمد پارسا محفوظ است</p>
+            <p class="footer-text">دسترسی با اجازه محمد پارسا امکان پذیر است</p>
+            <div class="copyright">
+                © 2023 محمد پارسا - همه حقوق محفوظ است
+            </div>
+        </div>
+        <!-- Settings Button -->
+        <div class="settings-button" id="settingsButton">
+            <i class="fas fa-cog"></i>
+        </div>
+        <!-- Settings Modal -->
+        <div class="settings-modal" id="settingsModal">
+            <div class="settings-content">
+                <div class="settings-header">
+                    تنظیمات | Settings
+                    <div class="close-settings" id="closeSettings">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3 class="settings-title">شبکه های اجتماعی محمد پارسا</h3>
+                    <div class="social-links">
+                        <a href="https://t.me/Mohammadparsa001" class="social-link telegram-link">
+                            <i class="fab fa-telegram-plane"></i>
+                            <span>تلگرام | Telegram</span>
+                        </a>
+                        <a href="https://wa.me/93791979726" class="social-link whatsapp-link">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>واتساپ | WhatsApp</span>
+                        </a>
+                        <a href="https://instagram.com/haidari9165?igshid=YTQwZjQ0NmI0OA==" class="social-link instagram-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>اینستاگرام | Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100041860717559" class="social-link facebook-link">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>فیسبوک | Facebook</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@mohammad_parsa_001?_t=8ppKm2TEFJI&_r=1" class="social-link tiktok-link">
+                            <i class="fab fa-tiktok"></i>
+                            <span>تیک‌تاک | TikTok</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3 class="settings-title">والپیپر | Wallpaper</h3>
+                    <div class="wallpaper-options">
+                        <div class="wallpaper-option selected" data-wallpaper="default" style="background: linear-gradient(135deg, #f1f5f9, #e2e8f0);"></div>
+                        <div class="wallpaper-option" data-wallpaper="usa-flag" style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png'); background-size: cover;"></div>
+                        <div class="wallpaper-option" data-wallpaper="blue-gradient" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);"></div>
+                        <div class="wallpaper-option" data-wallpaper="purple-gradient" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);"></div>
+                        <div class="wallpaper-option" data-wallpaper="green-gradient" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+                        <div class="wallpaper-option" data-wallpaper="red-gradient" style="background: linear-gradient(135deg, #ef4444, #dc2626);"></div>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3 class="settings-title">تم رنگی | Theme</h3>
+                    <div class="theme-options">
+                        <div class="theme-option theme-light selected" data-theme="light">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="theme-option theme-dark" data-theme="dark">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3 class="settings-title">اندازه فونت | Font Size</h3>
+                    <div class="font-options">
+                        <div class="font-option selected" data-font="normal">عادی | Normal</div>
+                        <div class="font-option" data-font="extra-large">بزرگ | Large</div>
+                        <div class="font-option" data-font="thin">باریک | Thin</div>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3 class="settings-title">ورژن | Version</h3>
+                    <div class="version-info">
+                        نسخه فعلی: 1.8.7.6 | Current Version: 1.8.7.6
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // تابع برای دریافت زمان باقیمانده از localStorage یا تنظیم مقدار اولیه
+        function getRemainingTime() {
+            const savedTime = localStorage.getItem('sharedLotteryCountdown');
+            if (savedTime) {
+                const savedData = JSON.parse(savedTime);
+                const startTime = new Date(savedData.startTime);
+                const now = new Date();
+                const elapsed = Math.floor((now - startTime) / 1000); // ثانیه‌های گذشته
+                // محاسبه زمان باقیمانده با کم کردن زمان گذشته
+                let remainingSeconds = savedData.initialTotalSeconds - elapsed;
+                // اگر زمان تمام شده باشد
+                if (remainingSeconds <= 0) {
+                    return { 
+                        days: 0, 
+                        hours: 0, 
+                        minutes: 0, 
+                        seconds: 0, 
+                        totalSeconds: 0,
+                        startTime: savedData.startTime
+                    };
+                }
+                const timeData = convertSecondsToTime(remainingSeconds);
+                timeData.startTime = savedData.startTime;
+                timeData.initialTotalSeconds = savedData.initialTotalSeconds;
+                return timeData;
+            } else {
+                // تنظیم مقدار اولیه: 15 روز 23 ساعت 32 دقیقه 60 ثانیه
+                const initialTotalSeconds = (15 * 24 * 60 * 60) + (23 * 60 * 60) + (32 * 60) + 60;
+                const startTime = new Date();
+                const timeData = convertSecondsToTime(initialTotalSeconds);
+                timeData.startTime = startTime.toISOString();
+                timeData.initialTotalSeconds = initialTotalSeconds;
+                // ذخیره در localStorage
+                localStorage.setItem('sharedLotteryCountdown', JSON.stringify({
+                    startTime: timeData.startTime,
+                    initialTotalSeconds: timeData.initialTotalSeconds
+                }));
+                return timeData;
+            }
+        }
+        // تبدیل ثانیه به روز، ساعت، دقیقه و ثانیه
+        function convertSecondsToTime(totalSeconds) {
+            const days = Math.floor(totalSeconds / (24 * 60 * 60));
+            const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
+            const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+            const seconds = Math.floor(totalSeconds % 60);
+            return { days, hours, minutes, seconds, totalSeconds };
+        }
+        // به روز رسانی شمارش معکوس
+        function updateCountdown() {
+            const timeData = getRemainingTime();
+            if (timeData.totalSeconds <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            // کاهش یک ثانیه (محاسبه مجدد بر اساس زمان شروع)
+            const now = new Date();
+            const startTime = new Date(timeData.startTime);
+            const elapsed = Math.floor((now - startTime) / 1000);
+            let remainingSeconds = timeData.initialTotalSeconds - elapsed;
+            if (remainingSeconds < 0) {
+                remainingSeconds = 0;
+            }
+            const { days, hours, minutes, seconds } = convertSecondsToTime(remainingSeconds);
+            // دریافت المان‌ها
+            const daysElement = document.getElementById('days');
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            // به روز رسانی با انیمیشن اگر مقدار تغییر کرده باشد
+            if (parseInt(daysElement.textContent) !== days) {
+                daysElement.textContent = days.toString().padStart(2, '0');
+                daysElement.classList.add('change');
+                setTimeout(() => daysElement.classList.remove('change'), 500);
+            }
+            if (parseInt(hoursElement.textContent) !== hours) {
+                hoursElement.textContent = hours.toString().padStart(2, '0');
+                hoursElement.classList.add('change');
+                setTimeout(() => hoursElement.classList.remove('change'), 500);
+            }
+            if (parseInt(minutesElement.textContent) !== minutes) {
+                minutesElement.textContent = minutes.toString().padStart(2, '0');
+                minutesElement.classList.add('change');
+                setTimeout(() => minutesElement.classList.remove('change'), 500);
+            }
+            if (parseInt(secondsElement.textContent) !== seconds) {
+                secondsElement.textContent = seconds.toString().padStart(2, '0');
+                secondsElement.classList.add('change');
+                setTimeout(() => secondsElement.classList.remove('change'), 500);
+            }
+        }
+        // بازنشانی زمان به 15 روز 23 ساعت 32 دقیقه 60 ثانیه
+        function resetTimer() {
+            if (confirm("آیا مطمئن هستید که می‌خواهید زمان را برای همه کاربران بازنشانی کنید؟ این عمل برگشت‌ناپذیر است!")) {
+                // تنظیم مقدار جدید: 15 روز 23 ساعت 32 دقیقه 60 ثانیه
+                const initialTotalSeconds = (15 * 24 * 60 * 60) + (23 * 60 * 60) + (32 * 60) + 60;
+                const startTime = new Date();
+                const timeData = {
+                    startTime: startTime.toISOString(),
+                    initialTotalSeconds: initialTotalSeconds
+                };
+                localStorage.setItem('sharedLotteryCountdown', JSON.stringify(timeData));
+                // به روز رسانی نمایش
+                document.getElementById('days').textContent = '15';
+                document.getElementById('hours').textContent = '23';
+                document.getElementById('minutes').textContent = '32';
+                document.getElementById('seconds').textContent = '60';
+                alert("زمان با موفقیت برای همه کاربران بازنشانی شد!");
+            }
+        }
+        // کپی کردن کد تخفیف
+        function copyDiscountCode() {
+            const code = document.getElementById('discountCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const message = document.getElementById('copiedMessage');
+                message.classList.add('show');
+                setTimeout(() => {
+                    message.classList.remove('show');
+                }, 3000);
+            }).catch(err => {
+                console.error('خطا در کپی کردن کد: ', err);
+            });
+        }
+        
+        // Share functions
+        function shareToInstagram(event) {
+            event.preventDefault();
+            const text = "لاتری گرین کارت آمریکا با محمد پارسا - فقط 15 روز فرصت دارید! 🇺🇸 #محمد_پارسا #لاتری_آمریکا #گرین_کارت";
+            const url = window.location.href;
+            alert("برای اشتراک در اینستاگرام، لطفاً از طریق استوری دستی این متن را کپی کنید:\n\n" + text + "\n\n" + url);
+        }
+        
+        function shareToFacebook(event) {
+            event.preventDefault();
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent("لاتری گرین کارت آمریکا با محمد پارسا - فقط 15 روز فرصت دارید! 🇺🇸");
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, '_blank', 'width=600,height=400');
+        }
+        
+        function shareToTwitter(event) {
+            event.preventDefault();
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent("لاتری گرین کارت آمریکا با محمد پارسا - فقط 15 روز فرصت دارید! 🇺🇸 #محمد_پارسا #لاتری_آمریکا #گرین_کارت");
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=600,height=400');
+        }
+        
+        function shareToWhatsApp(event) {
+            event.preventDefault();
+            const text = encodeURIComponent("لاتری گرین کارت آمریکا با محمد پارسا - فقط 15 روز فرصت دارید! 🇺🇸\n\n" + window.location.href);
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+        
+        function shareToTelegram(event) {
+            event.preventDefault();
+            const text = encodeURIComponent("لاتری گرین کارت آمریکا با محمد پارسا - فقط 15 روز فرصت دارید! 🇺🇸\n\n" + window.location.href);
+            window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${text}`, '_blank');
+        }
+        
+        function shareToLinkedIn(event) {
+            event.preventDefault();
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent("لاتری گرین کارت آمریکا با محمد پارسا");
+            const summary = encodeURIComponent("شانس خود را برای زندگی در آمریکا امتحان کنید - فقط 15 روز فرصت دارید!");
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}&summary=${summary}`, '_blank', 'width=600,height=400');
+        }
+        
+        function copyPageLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const message = document.getElementById('copiedLinkMessage');
+                message.classList.add('show');
+                setTimeout(() => {
+                    message.classList.remove('show');
+                }, 3000);
+            }).catch(err => {
+                console.error('خطا در کپی کردن لینک: ', err);
+            });
+        }
+        
+        // Settings functionality
+        const settingsButton = document.getElementById('settingsButton');
+        const settingsModal = document.getElementById('settingsModal');
+        const closeSettings = document.getElementById('closeSettings');
+        settingsButton.addEventListener('click', () => {
+            settingsModal.style.display = 'flex';
+        });
+        closeSettings.addEventListener('click', () => {
+            settingsModal.style.display = 'none';
+        });
+        // Close modal when clicking outside
+        settingsModal.addEventListener('click', (e) => {
+            if (e.target === settingsModal) {
+                settingsModal.style.display = 'none';
+            }
+        });
+        // Theme options
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                themeOptions.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                const theme = option.getAttribute('data-theme');
+                if (theme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.body.classList.remove('dark-theme');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+        // Font options
+        const fontOptions = document.querySelectorAll('.font-option');
+        fontOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                fontOptions.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                const font = option.getAttribute('data-font');
+                document.body.classList.remove('extra-large-font', 'thin-font');
+                if (font === 'extra-large') {
+                    document.body.classList.add('extra-large-font');
+                    localStorage.setItem('font', 'extra-large');
+                } else if (font === 'thin') {
+                    document.body.classList.add('thin-font');
+                    localStorage.setItem('font', 'thin');
+                } else {
+                    localStorage.setItem('font', 'normal');
+                }
+            });
+        });
+        // Wallpaper options
+        const wallpaperOptions = document.querySelectorAll('.wallpaper-option');
+        wallpaperOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                wallpaperOptions.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                const wallpaper = option.getAttribute('data-wallpaper');
+                localStorage.setItem('wallpaper', wallpaper);
+                // Apply wallpaper to body
+                if (wallpaper === 'usa-flag') {
+                    document.body.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png')";
+                    document.body.style.backgroundSize = "cover";
+                    document.body.style.backgroundAttachment = "fixed";
+                } else if (wallpaper === 'blue-gradient') {
+                    document.body.style.background = "linear-gradient(135deg, #3b82f6, #1d4ed8)";
+                    document.body.style.backgroundImage = "none";
+                } else if (wallpaper === 'purple-gradient') {
+                    document.body.style.background = "linear-gradient(135deg, #8b5cf6, #7c3aed)";
+                    document.body.style.backgroundImage = "none";
+                } else if (wallpaper === 'green-gradient') {
+                    document.body.style.background = "linear-gradient(135deg, #10b981, #059669)";
+                    document.body.style.backgroundImage = "none";
+                } else if (wallpaper === 'red-gradient') {
+                    document.body.style.background = "linear-gradient(135deg, #ef4444, #dc2626)";
+                    document.body.style.backgroundImage = "none";
+                } else {
+                    document.body.style.background = "linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)";
+                    document.body.style.backgroundImage = "none";
+                }
+            });
+        });
+        // Load saved settings
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.querySelector('.theme-option[data-theme="dark"]').classList.add('selected');
+                document.querySelector('.theme-option[data-theme="light"]').classList.remove('selected');
+            }
+            // Load font
+            const savedFont = localStorage.getItem('font');
+            if (savedFont) {
+                document.body.classList.remove('extra-large-font', 'thin-font');
+                if (savedFont === 'extra-large') {
+                    document.body.classList.add('extra-large-font');
+                    document.querySelector('.font-option[data-font="extra-large"]').classList.add('selected');
+                } else if (savedFont === 'thin') {
+                    document.body.classList.add('thin-font');
+                    document.querySelector('.font-option[data-font="thin"]').classList.add('selected');
+                } else {
+                    document.querySelector('.font-option[data-font="normal"]').classList.add('selected');
+                }
+            } else {
+                document.querySelector('.font-option[data-font="normal"]').classList.add('selected');
+            }
+            // Load wallpaper
+            const savedWallpaper = localStorage.getItem('wallpaper');
+            if (savedWallpaper && savedWallpaper !== 'default') {
+                const wallpaperOption = document.querySelector(`.wallpaper-option[data-wallpaper="${savedWallpaper}"]`);
+                if (wallpaperOption) {
+                    wallpaperOption.classList.add('selected');
+                    document.querySelector('.wallpaper-option[data-wallpaper="default"]').classList.remove('selected');
+                    if (savedWallpaper === 'usa-flag') {
+                        document.body.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png')";
+                        document.body.style.backgroundSize = "cover";
+                        document.body.style.backgroundAttachment = "fixed";
+                    } else if (savedWallpaper === 'blue-gradient') {
+                        document.body.style.background = "linear-gradient(135deg, #3b82f6, #1d4ed8)";
+                    } else if (savedWallpaper === 'purple-gradient') {
+                        document.body.style.background = "linear-gradient(135deg, #8b5cf6, #7c3aed)";
+                    } else if (savedWallpaper === 'green-gradient') {
+                        document.body.style.background = "linear-gradient(135deg, #10b981, #059669)";
+                    } else if (savedWallpaper === 'red-gradient') {
+                        document.body.style.background = "linear-gradient(135deg, #ef4444, #dc2626)";
+                    }
+                }
+            }
+            // نمایش زمان فعلی
+            const timeData = getRemainingTime();
+            document.getElementById('days').textContent = timeData.days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = timeData.hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = timeData.minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = timeData.seconds.toString().padStart(2, '0');
+            // به روز رسانی شمارش معکوس هر ثانیه
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>
