@@ -1499,6 +1499,52 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             animation: shine 2s infinite;
         }
+        /* Rainbow Line Section */
+        .rainbow-line-section {
+            margin: 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .rainbow-line {
+            height: 10px;
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 700% 100%;
+            animation: rainbowShift 3s linear infinite;
+            position: relative;
+        }
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 700% 50%; }
+        }
+        .rainbow-text {
+            background: linear-gradient(135deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 20px 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+            animation: rainbowText 3s linear infinite;
+        }
+        @keyframes rainbowText {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 700% 50%; }
+        }
+        .rainbow-line-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.1), transparent);
+            z-index: 1;
+        }
         @media (max-width: 768px) {
             .container {
                 border-radius: 15px;
@@ -1575,6 +1621,9 @@
                 width: 50px;
                 height: 50px;
                 font-size: 1.5rem;
+            }
+            .rainbow-text {
+                font-size: 2rem;
             }
         }
         /* Dark Theme */
@@ -1679,6 +1728,12 @@
                     </div>
                 </div>
                 <button class="reset-button" onclick="resetTimer()">بازنشانی زمان (۱۵ روز ۲۳ ساعت ۳۲ دقیقه ۶۰ ثانیه)</button>
+            </div>
+            <!-- Rainbow Line Section -->
+            <div class="rainbow-line-section">
+                <div class="rainbow-line"></div>
+                <div class="rainbow-text">با محمد پارسا آسونه</div>
+                <div class="rainbow-line"></div>
             </div>
             <!-- Hashtag Section -->
             <div class="hashtag-section">
@@ -1846,16 +1901,16 @@
                 <div class="about-lottery-content">
                     <p><strong>لاتاری گرین کارت چیست؟</strong></p>
                     <p>برنامه لاتاری گرین کارت آمریکا ساده‌ترین و ارزان‌ترین روش برای مهاجرت به آمریکا است. برای ثبت نام در برنامه لاتاری آمریکا که هر سال برگزار می‌شود، نیاز به شرایط خاص و ویژه ای ندارید و تقریبا همه افراد می‌توانند در لاتاری آمریکا ثبت نام کنند. برندگان هر دوره از لاتاری آمریکا پس از دریافت ویزای لاتاری، می‌توانند همراه با خانواده خود (یعنی همسر و فرزندان زیر 21 سال مجردشان) وارد کشور آمریکا شوند و ضمن زندگی همیشگی در کشور آمریکا، از امتیازات شهروندان آمریکایی همچون کار در آمریکا ، افتتاح حساب بانکی ، تحصیل در آمریکا ، اخذ شماره تامین اجتماعی آمریکا و... بهره‌مند شوند.</p>
-                    <p><strong>مدارک مورد نیاز جهت ثبت نام لاتاری</strong></p>
-                    <p>تنها مدرک مورد نیاز برای ثبت نام لاتاری آمریکا یک عکس است. عکس لاتاری برای ثبت نام بسیار مهم است و اگر مطابق شرایط مشخصی نباشد، باعث کنار گذاشته شدن متقاضی از قرعه کشی لاتاری خواهد شد. برای ثبت نام لاتاری، هم متقاضی اصلی و هم افراد زیرمجموعه او (همسر و فرزندان زیر 21 سال) نیاز به عکس استاندارد دارند. برای کسب اطلاعات بیشتر حتما مقاله <a href="https://parsa-digital-photo.com/immigration/usa/dv-lottery/lottery-picture" target="_blank" style="color: var(--accent); text-decoration: underline;">شرایط عکس لاتاری</a> را در سایت <strong>عکاسی دیجیتالی پارسا</strong> مطالعه کنید.</p>
+                    <p><strong>مدارک مورد نیاز جهت ثبت نام لاتری</strong></p>
+                    <p>تنها مدرک مورد نیاز برای ثبت نام لاتاری آمریکا یک عکس است. عکس لاتاری برای ثبت نام بسیار مهم است و اگر مطابق شرایط مشخصی نباشد، باعث کنار گذاشته شدن متقاضی از قرعه کشی لاتاری خواهد شد. برای ثبت نام لاتاری، هم متقاضی اصلی و هم افراد زیرمجموعه او (همسر و فرزندان زیر 21 سال) نیاز به عکس استاندارد دارند. برای کسب اطلاعات بیشتر حتما مقاله <a href="https://parsa-digital-photo.com/immigration/usa/dv-lottery/lottery-picture" target="_blank" style="color: var(--accent); text-decoration: underline;">شرایط عکس لاتری</a> را در سایت <strong>عکاسی دیجیتالی پارسا</strong> مطالعه کنید.</p>
                     <p><strong>تاریخ اعلام نتایج لاتاری</strong></p>
                     <p>اعلام نتایج لاتاری گرین کارت 2027 آمریکا، اردیبهشت ماه سال آینده انجام خواهد شد.</p>
                     <p><strong>تاریخ و زمان شروع و پایان لاتاری 2027</strong></p>
-                    <p>ثبت نام لاتاری آمریکا در تاریخ 2 اکتبر ساعت 19:30 به وقت تهران آغاز شد و تا 25 روز دیگر از تاریخ امروز یعنی تا 7 نوامبر ساعت 20:30 ادامه خواهد داشت. <strong>عکاسی دیجیتالی پارسا، کارگزار ویژه و معتبر ثبت‌نام لاتری برای فارسی‌زبانان است.</strong></p>
+                    <p>ثبت نام لاتاری آمریکا در تاریخ 2 اکتبر ساعت 19:30 به وقت تهران آغاز شد و تا 25 روز دیگر از تاریخ امروز یعنی تا 7 نوامبر ساعت 20:30 ادامه خواهد داشت. <strong>عکاسی دیجیتالی پارسا، کارگزار ویژه و معتبر ثبت‌نام لاتری برای تمام مردم جهان است.</strong></p>
                 </div>
                 <div class="registration-methods">
                     <div class="registration-card online-registration">
-                        <h3 class="registration-title"><i class="fas fa-laptop"></i> ثبت نام لاتاری آنلاین</h3>
+                        <h3 class="registration-title"><i class="fas fa-laptop"></i> ثبت نام لاتری آنلاین</h3>
                         <ul class="registration-list">
                             <li>بدون نیاز به مراجعه</li>
                             <li>دریافت فایل تاییدیه با پیامک و ایمیل</li>
@@ -1864,11 +1919,11 @@
                             <li>کارگزاری تخصصی پس از برنده شدن</li>
                         </ul>
                         <a href="https://t.me/Mohammadparsa001" class="neon-button">
-                            <i class="fab fa-telegram-plane"></i> ثبت نام لاتاری آنلاین
+                            <i class="fab fa-telegram-plane"></i> ثبت نام لاتری آنلاین
                         </a>
                     </div>
                     <div class="registration-card">
-                        <h3 class="registration-title"><i class="fas fa-building"></i> ثبت نام لاتاری حضوری</h3>
+                        <h3 class="registration-title"><i class="fas fa-building"></i> ثبت نام لاتری حضوری</h3>
                         <ul class="registration-list">
                             <li>عکاسی داخل استودیو</li>
                             <li>دریافت فایل تاییدیه در محل استودیو</li>
@@ -1879,7 +1934,7 @@
                         <div class="not-started">هنوز شروع نشده است</div>
                     </div>
                     <div class="registration-card cip-registration">
-                        <h3 class="registration-title"><i class="fas fa-crown"></i> ثبت نام لاتاری حضوری CIP</h3>
+                        <h3 class="registration-title"><i class="fas fa-crown"></i> ثبت نام لاتری حضوری CIP</h3>
                         <ul class="registration-list">
                             <li>فضای اختصاصی و VIP</li>
                             <li>ثبت نام بدون نوبت</li>
@@ -1895,8 +1950,8 @@
                 <div class="faq-section">
                     <h3 class="faq-title">پرسش‌های رایج و پاسخ‌های تخصصی</h3>
                     <div class="faq-item">
-                        <div class="faq-question">در صورت برنده شدن در لاتاری می‌توانم خانواده‌ام را همراه خودم ببرم؟</div>
-                        <div class="faq-answer">بله. در صورت برنده شدن در لاتاری، می‌توانید همسر و فرزندان زیر 21 سال مجرد خود را نیز همراه خود به آمریکا ببرید.</div>
+                        <div class="faq-question">در صورت برنده شدن در لاتری می‌توانم خانواده‌ام را همراه خودم ببرم؟</div>
+                        <div class="faq-answer">بله. در صورت برنده شدن در لاتری، می‌توانید همسر و فرزندان زیر 21 سال مجرد خود را نیز همراه خود به آمریکا ببرید.</div>
                     </div>
                     <div class="faq-item">
                         <div class="faq-question">اگر درخواست ویزای تحصیلی داشته باشیم می‌توانیم لاتاری ثبت نام کنیم؟</div>
@@ -1907,11 +1962,11 @@
                         <div class="faq-answer">بله. ثبت نام لاتاری امسال بدون نیاز به پاسپورت انجام می‌شود و می‌توانید به عنوان متقاضی اصلی در لاتاری آمریکا ثبت نام کنید.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">ما متاهل هستیم، چند بار می‌توانیم در لاتاری 2027 ثبت نام کنیم؟</div>
+                        <div class="faq-question">ما متاهل هستیم، چند بار می‌توانیم در لاتری 2027 ثبت نام کنیم؟</div>
                         <div class="faq-answer">می‌توانید دوبار در لاتاری ثبت نام کنید، به این شیوه که یک بار آقا متقاضی اصلی باشد و مشخصات خانم و فرزندان در بخش همراهان درج شود و یک بار خانم متقاضی اصلی باشد و مشخصات آقا و فرزندان در بخش همراهان درج شود.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">من هنوز دیپلم ندارم، می‌توانم خودم متقاضی اصلی ثبت نام در لاتاری باشم؟</div>
+                        <div class="faq-question">من هنوز دیپلم ندارم، می‌توانم خودم متقاضی اصلی ثبت نام در لاتری باشم؟</div>
                         <div class="faq-answer">بله شدنی هست و موارد زیادی هم داشتیم که به ویزا رسیده اند.</div>
                     </div>
                     <div class="faq-item">
@@ -1928,7 +1983,7 @@
                     </div>
                     <div class="faq-item">
                         <div class="faq-question">چگونه می‌توانیم از ثبت نام خود در <strong>عکاسی دیجیتالی پارسا</strong> مطمئن شویم؟</div>
-                        <div class="faq-answer">پس از ثبت نام موفقیت آمیز لاتاری در <strong>عکاسی دیجیتالی پارسا</strong>، رسید ثبت نام خود را دریافت خواهید کرد.</div>
+                        <div class="faq-answer">پس از ثبت نام موفقیت آمیز لاتری در <strong>عکاسی دیجیتالی پارسا</strong>، رسید ثبت نام خود را دریافت خواهید کرد.</div>
                     </div>
                 </div>
             </div>
